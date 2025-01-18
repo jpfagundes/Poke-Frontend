@@ -1,0 +1,32 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.pokemon {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.id{
+  font-weight: bold;
+}
+
+.types{
+  color: ;
+  background-color:#BFC66B;
+  border: 1px solid #ccc;
+  
+  border-radius: 10px;
+}
+
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { getPokemonList } from '../api';
+import { getPokemonList } from '../services/api';
+import '../styles/PokemonList.css';
 
 const PokemonList = ({ onPokemonSelect }) => {
   const [pokemons, setPokemons] = useState([]);
@@ -13,16 +14,28 @@ const PokemonList = ({ onPokemonSelect }) => {
     fetchPokemons();
   }, []);
 
+  if (!pokemons.length) {
+    return <div>Carregando Pokémons...</div>; // Exibe enquanto carrega
+  }
+
+  // Renderiza a lista de Pokémon
   return (
-    <div>
-      <h2>Lista de Pokémons</h2>
-      <ul>
-        {pokemons.map((pokemon) => (
-          <li key={pokemon.name} onClick={() => onPokemonSelect(pokemon.name)}>
-            {pokemon.name}
-          </li>
-        ))}
-      </ul>
+    <div className= "list">
+      {pokemons.map((pokemon) => (
+        <div
+          className="pokemon"
+          key={pokemon.id}
+        >
+
+          <img
+            src={pokemon.image}
+            alt={pokemon.name}
+          />
+          <p className='id'>#{pokemon.id}</p>
+          <h3>{pokemon.name}</h3>
+          <p className='types'>{pokemon.type}</p>
+        </div>
+      ))}
     </div>
   );
 };

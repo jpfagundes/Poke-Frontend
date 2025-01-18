@@ -1,9 +1,12 @@
 import React from 'react';
 import '../styles/Header.css';
+import '../assets/pokedex.svg';
 
 const Header = () => (
+
   <header className="header">
-    <h1>Pokédex</h1>
+    <img src="../assets/pokedex.svg" />
+    
   </header>
 );
 

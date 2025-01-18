@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getPokemonDetails } from '../api';
+import { getPokemonDetails } from '../services/api';
 
 const PokemonDetails = ({ pokemonName }) => {
   const [pokemonDetails, setPokemonDetails] = useState(null);
