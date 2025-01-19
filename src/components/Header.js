@@ -1,11 +1,11 @@
 import React from 'react';
 import '../styles/Header.css';
-import '../assets/pokedex.svg';
+import PokedexImg from '../assets/pokedex.svg';
 
 const Header = () => (
 
   <header className="header">
-    <img src="../assets/pokedex.svg" />
+    <img src={PokedexImg}/>
     
   </header>
 );
