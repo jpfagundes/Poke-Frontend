@@ -32,23 +32,29 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="search-bar">
-      <input
-        type="text"
-        placeholder="Pesquise por nome ou ID..."
-        value={searchTerm}
-        onChange={handleInputChange}
-      />
-      <select value={selectedType} onChange={handleTypeChange}>
-        <option value="">Selecionar Tipo</option>
-        {pokemonTypes.map((type) => (
-          <option value={type} key={type}>
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </option>
-        ))}
-      </select>
-      <button onClick={handleSearch}>
-        <img src={SearchIcon} alt="Pesquisar" />
-      </button>
+      <div className="search-field">
+        <input
+          type="text"
+          placeholder="Pesquise por nome ou ID..."
+          value={searchTerm}
+          onChange={handleInputChange}
+        />
+
+        <button onClick={handleSearch}>
+          <img src={SearchIcon} alt="Pesquisar" />
+        </button>
+      </div>
+
+      <div className="dropdown-menu">
+        <select value={selectedType} onChange={handleTypeChange}>
+          <option value="">Selecionar Tipo</option>
+          {pokemonTypes.map((type) => (
+            <option value={type} key={type}>
+              {type.charAt(0).toUpperCase() + type.slice(1)}
+            </option>
+          ))}
+        </select>
+      </div>
     </div>
   );
 };

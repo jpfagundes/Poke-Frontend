@@ -2,7 +2,7 @@ import React from "react";
 import Pokemon from "../Pokemon/Pokemon";
 import "./PokemonList.css";
 
-const PokemonList = ({ pokemons }) => {
+const PokemonList = ({ pokemons, onAddToTeam }) => {
   if (!pokemons.length) {
     return <div>Carregando Pokémons...</div>;
   }
@@ -16,6 +16,7 @@ const PokemonList = ({ pokemons }) => {
           name={pokemon.name}
           image={pokemon.image}
           types={pokemon.types}
+          onAddToTeam={onAddToTeam}
         />
       ))}
     </div>

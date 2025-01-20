@@ -4,9 +4,11 @@ import ArrowRight from "../../assets/arrow-right.svg";
 import PokedexImg from "../../assets/pokedex.svg";
 import { getPokemonDetails } from "../../services/api";
 import { useNavigate } from "react-router-dom";
+import AddButton from "../../components/AddButton/AddButton";
 import "./PokemonDetails.css";
 import "../../styles/TypeColors.css";
 import Loading from "../../components/Loading/Loading";
+import PokemonTeam from "../../components/PokemonTeam/PokemonTeam";
 
 const PokemonDetails = () => {
   const navigate = useNavigate();
@@ -17,6 +19,10 @@ const PokemonDetails = () => {
   }
   const [isLoading, setIsLoading] = useState(true);
   const [details, setDetails] = useState(null);
+  const [team, setTeam] = useState(() => {
+    const savedTeam = localStorage.getItem("pokemonTeam");
+    return savedTeam ? JSON.parse(savedTeam) : [];
+  });
 
   const fetchDetails = async (pokemonId) => {
     setIsLoading(true);
@@ -31,8 +37,26 @@ const PokemonDetails = () => {
     }
   }, [params.pokemonIdentifier]);
 
-  const refetchPokemon = async (pokemonId) => {
-    await fetchDetails(pokemonId);
+  useEffect(() => {
+    localStorage.setItem("pokemonTeam", JSON.stringify(team));
+  }, [team]);
+
+  const handleAddToTeam = (pokemon) => {
+    if (team.length >= 5) {
+      alert("Seu time já tem 5 Pokémons!");
+      return;
+    }
+
+    if (team.some((member) => member.id === pokemon.id)) {
+      alert("Esse Pokémon já está no seu time!");
+      return;
+    }
+
+    setTeam([...team, pokemon]);
+  };
+
+  const handleRemoveFromTeam = (pokemonId) => {
+    setTeam(team.filter((member) => member.id !== pokemonId));
   };
 
   if (isLoading) return <Loading />;
@@ -40,9 +64,7 @@ const PokemonDetails = () => {
   return (
     <div className="content-details">
       <header>
-        <img src={PokedexImg} 
-        onClick={() => navigate("/")}
-        />
+        <img src={PokedexImg} onClick={() => navigate("/")} />
       </header>
 
       <div className="pokemon-box">
@@ -52,27 +74,27 @@ const PokemonDetails = () => {
 
         <div className="infos">
           <p id="id"> #{details.id}</p>
-          <h2 id="name">{details.name.charAt(0).toUpperCase()
-           + details.name.slice(1)}</h2>
+          <h2 id="name">
+            {details.name.charAt(0).toUpperCase() + details.name.slice(1)}
+          </h2>
 
           <div className="types-details">
-          {details.types.map((type, index) => (
-              <p className={`type-badge ${type}`} 
-              key={index}>{type.charAt(0).toUpperCase()
-                + type.slice(1)}</p>
+            {details.types.map((type, index) => (
+              <p className={`type-badge ${type}`} key={index}>
+                {type.charAt(0).toUpperCase() + type.slice(1)}
+              </p>
             ))}
           </div>
 
           <div className="hw-box">
-
             <div className="height">
               <span>Altura</span>
-              <p> {(details.height) / 10} m</p>
+              <p> {details.height / 10} m</p>
             </div>
 
             <div className="weight">
               <span>Peso</span>
-              <p> {(details.weight / 10)} kg</p>
+              <p> {details.weight / 10} kg</p>
             </div>
           </div>
 
@@ -119,7 +141,12 @@ const PokemonDetails = () => {
         </div>
       </div>
 
-      <footer>
+      <AddButton
+        pokemon={details}
+        onAddToTeam={handleAddToTeam}
+      />
+
+      <div className="evolutions">
         <h2>Evoluções</h2>
         <div className="evolution-chain">
           {details.evolutions.map((evolution, index) => {
@@ -129,7 +156,7 @@ const PokemonDetails = () => {
                 <div
                   onClick={() => {
                     if (details.id !== evolution.id) {
-                      refetchPokemon(evolution.id);
+                      fetchDetails(evolution.id);
                     }
                   }}
                   style={{
@@ -145,7 +172,11 @@ const PokemonDetails = () => {
             );
           })}
         </div>
-      </footer>
+      </div>
+
+      <PokemonTeam team={team} onRemoveFromTeam={handleRemoveFromTeam} />
+
+
     </div>
   );
 };
