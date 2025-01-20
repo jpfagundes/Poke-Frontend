@@ -1,0 +1,14 @@
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+.header img {
+  width: 100px;
+  heeight: 100px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 2em;
+}

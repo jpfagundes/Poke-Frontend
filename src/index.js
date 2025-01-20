@@ -1,18 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PokemonDetailsPage from './pages/PokemonDetailsPage';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import Home from "../src/pages/Home/Home";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import PokemonDetails from "./pages/PokemonDetails/PokemonDetails";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<App />}/>
-        <Route index path="/details" element={<PokemonDetailsPage />}/>
-        <Route index path="*" element={<h1>PÁGINA NÃO ENCONTRADA</h1>}/>
+        <Route index path="/" element={<Home />} />
+        <Route
+          path="/details/:pokemonIdentifier"
+          element={<PokemonDetails />}
+        />
+        <Route path="*" element={<h1>PÁGINA NÃO ENCONTRADA</h1>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
