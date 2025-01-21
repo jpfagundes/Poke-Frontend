@@ -5,7 +5,7 @@ import PokedexImg from "../../assets/pokedex.svg";
 const Header = () => (
 
   <header className="header">
-    <img src={PokedexImg}/>
+    <img src={PokedexImg} alt="Logo da Pokedéx"/>
     
   </header>
 );

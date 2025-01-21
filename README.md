@@ -1,70 +1,114 @@
-# Getting Started with Create React App
+# <h1 align="center">  Poke-Frontend </h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Uma aplicação web interativa para explorar Pokémons, pesquisar por nome, ID ou tipo, e montar seu próprio time de Pokémons. Desenvolvida com React e consumindo dados de uma API externa.
 
-In the project directory, you can run:
+## Índice 📚
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Como Executar](#como-executar)
+- [Estrutura de Arquivos](#estrutura-de-arquivos)
+- [Contribuição](#contribuição)
+- [Licença](#licença)
 
-### `npm start`
+## Funcionalidades ⚡
+- **Pesquisa** 🔍:
+  - Pesquise Pokémons por nome ou ID.
+  - Filtre Pokémons por tipo selecionando no dropdown.
+- **Navegação** 🧭:
+  - Paginação para explorar a lista de Pokémons.
+  - Mensagem de erro amigável ao buscar por um Pokémon inexistente.
+- **Detalhes do Pokémon** 🐾:
+  - Visualize informações detalhadas de cada Pokémon, incluindo tipos, habilidades, altura, peso e status.
+  - Evoluções com navegação para outros Pokémons na cadeia evolutiva.
+- **Gerenciamento de Time** 🛡️:
+  - Adicione até 5 Pokémons ao seu time.
+  - Remova Pokémons do time a qualquer momento.
+  - Time persistido no local storage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tecnologias Utilizadas 🛠️
+- **Frontend** 🌐:
+  - React.js
+  - CSS Modules
+- **Serviços** 🔗:
+  - Consumo de API para dados de Pokémons.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Como Executar 🚀
 
-### `npm test`
+### Pré-requisitos ✅
+- Node.js instalado
+- Gerenciador de pacotes npm ou yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Passos 📝
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
 
-### `npm run build`
+2. Acesse o diretório do projeto:
+   
+bash
+   cd pokemon-explorer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Instale as dependências:
+   
+bash
+   npm install
+   # ou
+   yarn install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+4. Inicie o servidor de desenvolvimento:
+   
+bash
+   npm start
+   # ou
+   yarn start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+5. Abra o navegador e acesse:
+   
+http://localhost:3000
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Estrutura de Arquivos 📂
 
-## Learn More
+src/
+├── assets/          # Imagens e ícones
+├── components/      # Componentes reutilizáveis
+│   ├── Header/      # Cabeçalho da aplicação
+│   ├── Loading/     # Indicador de carregamento
+│   ├── PokemonList/ # Lista de Pokémons
+│   ├── SearchBar/   # Barra de pesquisa
+│   └── AddButton/   # Botão de adicionar ao time
+├── pages/
+│   ├── Home/        # Página inicial
+│   └── PokemonDetails/ # Página de detalhes do Pokémon
+├── services/        # Chamadas à API
+├── styles/          # Estilos globais e específicos
+└── utils/           # Funções utilitárias
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Contribuição 🤝
+Contribuições são bem-vindas! Para contribuir:
+1. Faça um fork do repositório.
+2. Crie uma nova branch:
+   
+bash
+   git checkout -b minha-feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Faça suas alterações e commit:
+   
+bash
+   git commit -m "Minha nova feature"
 
-### Analyzing the Bundle Size
+4. Envie para sua branch remota:
+   
+bash
+   git push origin minha-feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+5. Abra um Pull Request.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Licença 📜
+Este projeto está licenciado sob a Licença MIT. Consulte o arquivo LICENSE para mais detalhes.

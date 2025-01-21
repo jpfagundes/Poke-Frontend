@@ -65,13 +65,13 @@ const PokemonDetails = () => {
   return (
     <div className="content-details">
       <header>
-        <img id="arrow-left" src={ArrowLeft} onClick={() => navigate("/")} />
-        <img src={PokedexImg} onClick={() => navigate("/")} />
+        <img id="arrow-left" src={ArrowLeft} onClick={() => navigate("/")} alt="Voltar para a página inicial" />
+        <img src={PokedexImg} onClick={() => navigate("/")} alt="Logo da Pokédex" />
       </header>
 
       <div className="pokemon-box">
         <div className="image">
-          <img src={details.image} />
+          <img src={details.image} alt={`Imagem de ${details.name}`} />
         </div>
 
         <div className="infos">

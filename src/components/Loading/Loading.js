@@ -12,7 +12,7 @@ const Loading = () => (
       minHeight: "100vh",
     }}
   >
-    <img src={PokedexLoading} style={{ width: "100%", height: 400 }} />
+    <img src={PokedexLoading} style={{ width: "100%", height: 400 }} alt="Carregando..." />
   </div>
 );
 
