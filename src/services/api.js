@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Base URL do backend
-const API_BASE_URL = 'http://localhost:3333';
+const API_BASE_URL = 'https://pokeapi-svgz.onrender.com';
 
 export const getPokemonList = async (offset = 0, limit = 20) => {
   const response = await axios.get(`${API_BASE_URL}/pokemons?offset=${offset}&limit=${limit}`);
