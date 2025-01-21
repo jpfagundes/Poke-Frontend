@@ -37,6 +37,12 @@ const SearchBar = ({ onSearch }) => {
     }
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleSearch(); // Executa a busca ao pressionar Enter
+    }
+  };
+
   return (
     <div className="search-bar">
       <div className="search-field">
@@ -45,6 +51,7 @@ const SearchBar = ({ onSearch }) => {
           placeholder="Pesquise por nome ou ID..."
           value={searchTerm}
           onChange={handleInputChange}
+          onKeyDown={handleKeyDown}
         />
 
         <button onClick={handleSearch}>
