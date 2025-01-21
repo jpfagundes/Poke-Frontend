@@ -36,7 +36,7 @@ const PokemonDetails = () => {
     if (params && params.pokemonIdentifier) {
       fetchDetails(params.pokemonIdentifier);
     }
-  }, [params.pokemonIdentifier]);
+  }, [params, params.pokemonIdentifier]);
 
   useEffect(() => {
     localStorage.setItem("pokemonTeam", JSON.stringify(team));
