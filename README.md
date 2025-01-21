@@ -72,6 +72,7 @@ http://localhost:3000
 
 ## Estrutura de Arquivos 📂
 
+```
 src/
 ├── assets/          # Imagens e ícones
 ├── components/      # Componentes reutilizáveis
@@ -86,7 +87,7 @@ src/
 ├── services/        # Chamadas à API
 ├── styles/          # Estilos globais e específicos
 └── utils/           # Funções utilitárias
-
+```
 
 
 ## Contribuição 🤝
