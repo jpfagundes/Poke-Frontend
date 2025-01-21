@@ -165,7 +165,7 @@ const PokemonDetails = () => {
                 >
                   <img src={evolution.image} alt={evolution.name} />
                 </div>
-                {showArrow && <img src={ArrowRight} className="arrow" />}
+                {showArrow && <img src={ArrowRight} alt="Próxima evolução"className="arrow" />}
               </Fragment>
             );
           })}

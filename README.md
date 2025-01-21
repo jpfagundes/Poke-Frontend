@@ -17,7 +17,6 @@ Uma aplicação web interativa para explorar Pokémons, pesquisar por nome, ID o
   - Filtre Pokémons por tipo selecionando no dropdown.
 - **Navegação** 🧭:
   - Paginação para explorar a lista de Pokémons.
-  - Mensagem de erro amigável ao buscar por um Pokémon inexistente.
 - **Detalhes do Pokémon** 🐾:
   - Visualize informações detalhadas de cada Pokémon, incluindo tipos, habilidades, altura, peso e status.
   - Evoluções com navegação para outros Pokémons na cadeia evolutiva.
