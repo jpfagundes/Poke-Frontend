@@ -1,6 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ArrowRight from "../../assets/arrow-right.svg";
+import ArrowLeft from "../../assets/arrow-left.svg";
 import PokedexImg from "../../assets/pokedex.svg";
 import { getPokemonDetails } from "../../services/api";
 import { useNavigate } from "react-router-dom";
@@ -43,7 +44,7 @@ const PokemonDetails = () => {
 
   const handleAddToTeam = (pokemon) => {
     if (team.length >= 5) {
-      alert("Seu time já tem 5 Pokémons!");
+      alert("Seu time atingiu o número máximo de Pokémons!");
       return;
     }
 
@@ -64,6 +65,7 @@ const PokemonDetails = () => {
   return (
     <div className="content-details">
       <header>
+        <img id="arrow-left" src={ArrowLeft} onClick={() => navigate("/")} />
         <img src={PokedexImg} onClick={() => navigate("/")} />
       </header>
 
@@ -141,10 +143,6 @@ const PokemonDetails = () => {
         </div>
       </div>
 
-      <AddButton
-        pokemon={details}
-        onAddToTeam={handleAddToTeam}
-      />
 
       <div className="evolutions">
         <h2>Evoluções</h2>
@@ -172,6 +170,13 @@ const PokemonDetails = () => {
             );
           })}
         </div>
+      </div>
+      
+      <div id="buttonAdd">
+          <AddButton
+            pokemon={details}
+            onAddToTeam={handleAddToTeam}
+          />
       </div>
 
       <PokemonTeam team={team} onRemoveFromTeam={handleRemoveFromTeam} />

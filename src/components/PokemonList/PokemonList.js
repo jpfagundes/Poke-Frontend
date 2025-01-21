@@ -3,9 +3,6 @@ import Pokemon from "../Pokemon/Pokemon";
 import "./PokemonList.css";
 
 const PokemonList = ({ pokemons, onAddToTeam }) => {
-  if (!pokemons.length) {
-    return <div>Carregando Pokémons...</div>;
-  }
 
   return (
     <div className="list">

@@ -3,9 +3,9 @@ import "./SearchBar.css";
 import SearchIcon from "../../assets/search-icon.svg";
 
 const pokemonTypes = [
-  "normal", "fighting", "flying", "poison", "ground", "rock", 
-  "bug", "ghost", "steel", "fire", "water", "grass", "electric", 
-  "psychic", "ice", "dragon", "dark", "fairy", "unknown"
+  "normal", "fighting", "flying", "poison", "ground", "rock",
+  "bug", "ghost", "steel", "fire", "water", "grass", "electric",
+  "psychic", "ice", "dragon", "dark", "fairy"
 ];
 
 const SearchBar = ({ onSearch }) => {
@@ -18,12 +18,19 @@ const SearchBar = ({ onSearch }) => {
   };
 
   const handleTypeChange = (event) => {
-    setSelectedType(event.target.value);
+    const type = event.target.value;
+    setSelectedType(type);
     setSearchTerm(""); // Limpa o texto digitado ao selecionar um tipo
+
+    if (type) {
+      onSearch(type, "type"); // Aciona a busca automaticamente ao selecionar um tipo
+    }
   };
 
   const handleSearch = () => {
-    if (selectedType) {
+    if (selectedType && !selectedType) {
+      onSearch(null, "all"); // Busca todos os Pokémon
+    } else if (selectedType) {
       onSearch(selectedType, "type"); // Busca por tipo
     } else {
       onSearch(searchTerm, "nameOrId"); // Busca por nome ou ID

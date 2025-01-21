@@ -1,6 +1,7 @@
 .type-badge.normal { background-color: #A8A77A; }
 .type-badge.fighting { background-color: #C22E28; }
 .type-badge.flying { background-color: #A98FF3; }
+.type-badge.fairy { background-color: #D685AD; }
 .type-badge.poison { background-color: #A33EA1; }
 .type-badge.ground { background-color: #E2BF65; }
 .type-badge.rock { background-color: #B6A136; }
@@ -15,5 +16,4 @@
 .type-badge.ice { background-color: #96D9D6; }
 .type-badge.dragon { background-color: #6F35FC; }
 .type-badge.dark { background-color: #705746; }
-.type-badge.stellar { background-color: #FFCC33; }
-.type-badge.unknown { background-color: #68A090; }
+.type-badge.stellar { background-color: #FFD700; }

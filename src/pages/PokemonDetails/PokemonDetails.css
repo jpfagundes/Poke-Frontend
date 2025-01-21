@@ -1,12 +1,26 @@
 header {
   height: 15vh;
+  position: relative;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 header img {
   cursor: pointer;
 }
+
+#arrow-left {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 10px;
+}
+
+header img:not(#arrow-left) {
+  position: relative;
+}
+
 
 h2,
 span {
@@ -160,6 +174,11 @@ span {
   height: 100px;
 }
 
+#buttonAdd{
+  display: flex;
+  justify-content: center;
+}
+
 .arrow {
   height: 25px;
   width: 25px;
@@ -209,3 +228,9 @@ span {
     margin: 0 200px 0 200px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 798px){
+  .hw-box p {
+    min-width: 50px
+  }
+ }

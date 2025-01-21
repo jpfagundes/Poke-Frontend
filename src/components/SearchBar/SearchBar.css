@@ -11,6 +11,7 @@
 .search-field {
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
 .search-bar img {
@@ -25,6 +26,7 @@ input, select {
   border: 1px solid #ccc;
 }
 select {
+  color: #757575;
   width: 80%;
   max-width: 300px;
 }

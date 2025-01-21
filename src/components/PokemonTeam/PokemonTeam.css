@@ -1,7 +1,53 @@
 .pokemon-team h2{
-  margin-bottom: 20px;
+  margin: 20px 0 20px 0;
+  text-align: center;
+}
+
+.pokemon-team p{
+  text-align: center;
 }
 
 .team-info p {
   margin-bottom: 10px;
 }
+
+@media (min-width: 1023px){
+  .team-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 766px){
+
+  .team-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+      "pokemon1 pokemon2"
+      "pokemon3 pokemon4"
+      "pokemon5 pokemon5"; /* Centraliza o quinto Pokémon */
+  }
+
+  .team-member:nth-child(1) {
+    grid-area: pokemon1;
+  }
+
+  .team-member:nth-child(2) {
+    grid-area: pokemon2;
+  }
+
+  .team-member:nth-child(3) {
+    grid-area: pokemon3;
+  }
+
+  .team-member:nth-child(4) {
+    grid-area: pokemon4;
+  }
+
+  .team-member:nth-child(5) {
+    grid-area: pokemon5;
+    justify-self: center; /* Centraliza horizontalmente o quinto item */
+  }
+  
+}
+
