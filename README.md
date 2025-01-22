@@ -42,27 +42,29 @@ Uma aplicação web interativa para explorar Pokémons, pesquisar por nome, ID o
 1. Clone o repositório:
    ```bash
    git clone https://github.com/seu-usuario/seu-repositorio.git
+    ```
 
 2. Acesse o diretório do projeto:
    
-bash
+```bash
    cd pokemon-explorer
-
+```
 
 3. Instale as dependências:
    
-bash
+```bash
    npm install
    # ou
    yarn install
-
+```
 
 4. Inicie o servidor de desenvolvimento:
    
-bash
+```bash
    npm start
    # ou
    yarn start
+```
 
 
 5. Abra o navegador e acesse:
@@ -95,18 +97,21 @@ Contribuições são bem-vindas! Para contribuir:
 1. Faça um fork do repositório.
 2. Crie uma nova branch:
    
-bash
+```bash
    git checkout -b minha-feature
+```
 
 3. Faça suas alterações e commit:
    
-bash
+```bash
    git commit -m "Minha nova feature"
+```
 
 4. Envie para sua branch remota:
    
-bash
+```bash
    git push origin minha-feature
+```
 
 5. Abra um Pull Request.
 
